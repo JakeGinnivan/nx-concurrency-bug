@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-concurrency-bug/lib-1": ["packages/lib-1/src/index.ts"],
+      "@nx-concurrency-bug/lib-2": ["packages/lib-2/src/index.ts"],
+      "@nx-concurrency-bug/lib-3": ["packages/lib-3/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

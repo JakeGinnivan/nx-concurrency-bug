@@ -17,5 +17,25 @@
         ]
       }
     }
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "apply": {
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "build"
+        },
+        {
+          "target": "apply",
+          "projects": "dependencies",
+          "params": "forward"
+        }
+      ]
+    }
   }
 }
