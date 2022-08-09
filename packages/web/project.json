@@ -1,14 +1,14 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/cms-infra/src",
+  "sourceRoot": "packages/web/src",
   "projectType": "library",
   "targets": {
-    "apply": {
+    "build": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "packages/cms-infra",
+        "cwd": "packages/web",
         "commands": [
-          "node ../../target.mjs cms-infra apply"
+          "node ../../target.mjs web build"
         ],
         "forwardAllArgs": true
       }
@@ -17,18 +17,18 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/cms-infra/**/*.ts"]
+        "lintFilePatterns": ["packages/web/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/cms-infra"],
+      "outputs": ["coverage/packages/web"],
       "options": {
-        "jestConfig": "packages/cms-infra/jest.config.ts",
+        "jestConfig": "packages/web/jest.config.ts",
         "passWithNoTests": true
       }
     }
   },
   "tags": [],
-  "implicitDependencies": ["core-infra", "cms"]
+  "implicitDependencies": ["api"]
 }

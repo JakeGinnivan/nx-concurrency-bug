@@ -6,9 +6,9 @@
     "apply": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "packages/lib-3",
+        "cwd": "packages/core-infra",
         "commands": [
-          "node ../../target.mjs cms apply"
+          "node ../../target.mjs core-infra apply"
         ],
         "forwardAllArgs": true
       }

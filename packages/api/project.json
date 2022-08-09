@@ -6,12 +6,28 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "packages/lib-3",
+        "cwd": "packages/api",
         "commands": [
           "node ../../target.mjs api build"
         ],
         "forwardAllArgs": true
       }
+    },
+    "docker-build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/api",
+        "commands": [
+          "node ../../target.mjs api docker-build"
+        ],
+        "forwardAllArgs": true
+      },
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
@@ -29,5 +45,6 @@
       }
     }
   },
-  "tags": []
+  "tags": [],
+  "implicitDependencies": ["cms"]
 }

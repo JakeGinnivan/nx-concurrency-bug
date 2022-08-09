@@ -6,7 +6,7 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "packages/lib-3",
+        "cwd": "packages/cms",
         "commands": [
           "node ../../target.mjs cms build"
         ],

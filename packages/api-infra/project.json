@@ -6,12 +6,18 @@
     "apply": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "packages/lib-3",
+        "cwd": "packages/api-infra",
         "commands": [
           "node ../../target.mjs api-infra apply"
         ],
         "forwardAllArgs": true
-      }
+      },
+      "dependsOn": [
+        {
+          "projects": "dependencies",
+          "target": "docker-build"
+        }
+      ]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",

@@ -19,7 +19,9 @@
       "@nx-concurrency-bug/api-infra": ["packages/api-infra/src/index.ts"],
       "@nx-concurrency-bug/cms": ["packages/cms/src/index.ts"],
       "@nx-concurrency-bug/cms-infra": ["packages/cms-infra/src/index.ts"],
-      "@nx-concurrency-bug/core-infra": ["packages/core-infra/src/index.ts"]
+      "@nx-concurrency-bug/core-infra": ["packages/core-infra/src/index.ts"],
+      "@nx-concurrency-bug/web": ["packages/web/src/index.ts"],
+      "@nx-concurrency-bug/web-infra": ["packages/web-infra/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
