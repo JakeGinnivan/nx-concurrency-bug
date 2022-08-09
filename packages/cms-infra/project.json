@@ -1,0 +1,34 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/cms-infra/src",
+  "projectType": "library",
+  "targets": {
+    "apply": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/lib-3",
+        "commands": [
+          "node ../../target.mjs cms-infra apply"
+        ],
+        "forwardAllArgs": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/cms-infra/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/cms-infra"],
+      "options": {
+        "jestConfig": "packages/cms-infra/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["core-infra", "cms"]
+}

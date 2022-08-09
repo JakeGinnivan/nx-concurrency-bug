@@ -1,0 +1,33 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/core-infra/src",
+  "projectType": "library",
+  "targets": {
+    "apply": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/lib-3",
+        "commands": [
+          "node ../../target.mjs cms apply"
+        ],
+        "forwardAllArgs": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/core-infra/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/core-infra"],
+      "options": {
+        "jestConfig": "packages/core-infra/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
